@@ -22,11 +22,14 @@
     </tr>
     
     <div *ngFor = "let item of template1 | keyvalue |paginate: {itemsPerPage:10 ,currentPage: page , totalItems: totalRecords }"> 
-       {{item.key}} 
-       ojson={{item.value |json}}
-         
-       
+       {{item.key}} ovalue={{item.value |json}}
     </div>
+    <div *ngFor="let item of ovalue">
+        <div *ngFor="let emp of item |keyvalue ">
+          Key: <b>{{emp.key}}</b> and Value: <b>{{emp.value}}</b>
+        </div>
+        <br>
+      </div>
     </table>
     </div>
     <div class="d2">
