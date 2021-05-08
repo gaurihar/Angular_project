@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200 --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "@angular/router": "~11.2.12",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
