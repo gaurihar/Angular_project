@@ -16,6 +16,7 @@ import { SidebarComponent } from './component/sidebar/sidebar.component'
 import {MatTableModule} from '@angular/material/table'
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field'
+import { FormsModule } from '@angular/forms'
 
 
 
@@ -43,7 +44,8 @@ import { CreateTemplateComponent } from './component/create-template/create-temp
     MatTableModule,
     MatIconModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule
    
   ],
   providers: [],

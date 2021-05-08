@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ElkService} from '../../services/elk.service'
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
-
+  templates: any=[]
+ 
+  page: number=1
+  totalRecords: any
+  ovalue : any=[]
+  Object = Object;
+  ojson=Object
+  
+  constructor(private elk:ElkService){}
   ngOnInit(): void {
+
   }
+
+ 
 
 }

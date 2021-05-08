@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import {TemplateModel} from '../model/template-model'
+import { TName} from '../model/template-model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ElkService {
-  private baseUrl: string = 'http://localhost:9200/';
+  
   constructor(private http:HttpClient) { }
   
-  getDataElk():Observable<any>
+ public  getDataElk():Observable<any>
   {
-   let url1="http://jsonplaceholder.typicode.com/todos";
-   let url="http://localhost:9200/"
-   return this.http.get<any>(`${this.baseUrl}_template`);
+   
+   return this.http.get<any>('/_index_template');
 
   }
 
-  createTemplate(templatemodel:TemplateModel):Observable<any>
+  public createTemplate(templatemodel:TName,name:string):Observable<any>
   {
-    return this.http.post(`${this.baseUrl}_template`, templatemodel);
+    return this.http.post(`_index_template/${name}`, templatemodel);
 
   }
 
+   deleteTemplate(template_name: any) {
+     
+    return this.http.delete(`/_index_template/${template_name}`);
+  }
 }

@@ -1,4 +1,6 @@
-<body>
-    <input type="text" placeholder="name">
-    <button (click)=createTemplate() > Create</button>
+
+    <input placeholder="Enter Template name" [(ngModel)]="name" />
+    <input placeholder="Enter index Patterns" [(ngModel)]="index_patterns" />
+    
+    <button type="submit" (click)="createTemplate()">Save</button>
   

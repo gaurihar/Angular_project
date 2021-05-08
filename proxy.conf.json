@@ -1,7 +1,8 @@
 {
-    "*": {
+    "/_index_template/*": {
         "target": "http://localhost:9200/",
         "secure": false,
-        "logLevel": "debug"
-    }
+        "logLevel": "debug",
+        "changeOrigin": true
+      }
 }
