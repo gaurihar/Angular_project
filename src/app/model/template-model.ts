@@ -33,8 +33,7 @@ export interface Lifecycle {
 
 export interface Mappings{
     dynamic: boolean;
-    type: string;
-    properties?: object;
+    properties: Object;
   }
 
 

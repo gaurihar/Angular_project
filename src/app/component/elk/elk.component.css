@@ -41,3 +41,12 @@ div.d3
   background-color: #4CAF50;
   color:white
 }
+
+.container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  width:100%;
+}
