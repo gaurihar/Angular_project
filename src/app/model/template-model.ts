@@ -1,15 +1,11 @@
-
-
-
-
 export interface TName{
   index_patterns:string[];
-  template:Template
+  template?:Template
   
 }
 
 export interface Template{
-  settings:Settings
+  settings?:Settings
   mappings:Mappings
 }
 
@@ -33,8 +29,21 @@ export interface Lifecycle {
 
 export interface Mappings{
     dynamic: boolean;
-    type: string;
-    properties?: object;
+    properties: Property;
   }
 
 
+export interface Attributes{
+  name: string;
+  type:string;
+  format?:string;
+}
+
+export interface Mapper{
+  type:string;
+  format?:string;
+}
+
+export interface Property{
+  [key:string]: Mapper;
+}

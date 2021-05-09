@@ -39,19 +39,14 @@ export class ElkComponent implements OnInit {
  ngOnInit(): void {
    this.getDataElk()
  }
-  
- getDataElk():any
- {
-  this.elk.getDataElk().subscribe(data=>
-      {
-        console.warn(data)
-        this.templates=data
-        this.totalRecords=this.templates.length
-      
-        
-      })
-    
- }
+ //To get all index template data
+ getDataElk():any{
+   this.elk.getDataElk().subscribe(data=>
+    {
+      this.templates=data
+      this.totalRecords=this.templates.length
+    })
+  }
 
  isSet(p:any):any
  {

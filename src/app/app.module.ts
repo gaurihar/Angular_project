@@ -16,12 +16,20 @@ import { SidebarComponent } from './component/sidebar/sidebar.component'
 import {MatTableModule} from '@angular/material/table'
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field'
-import { FormsModule } from '@angular/forms'
-
+import { FormArrayName, FormsModule } from '@angular/forms'
+import { MatCardModule } from '@angular/material/card';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import {MatIconModule} from '@angular/material/icon';
-import { CreateTemplateComponent } from './component/create-template/create-template.component'; 
+import { CreateTemplateComponent } from './component/create-template/create-template.component';
+import { MappingDialerComponent } from './component/mapping-dialer/mapping-dialer.component'; 
 
 
 @NgModule({
@@ -31,7 +39,8 @@ import { CreateTemplateComponent } from './component/create-template/create-temp
     FooterComponent,
     ElkComponent,
     SidebarComponent,
-    CreateTemplateComponent
+    CreateTemplateComponent,
+    MappingDialerComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +54,20 @@ import { CreateTemplateComponent } from './component/create-template/create-temp
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    FormsModule
-   
+    FormsModule,
+    MatCardModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    MatToolbarModule, 
+   MatButtonModule,  
+   MatInputModule, 
+   MatDialogModule, 
+   MatTableModule, 
+   MatMenuModule,
+   MatIconModule,
+   MatProgressSpinnerModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
