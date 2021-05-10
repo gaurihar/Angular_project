@@ -27,7 +27,7 @@ export class MappingDialerComponent {
   }
 
   closeDialog(){
-    this.dialogRef.close({event:'Cancel'});
+    this.dialogRef.close();
   }
 
 

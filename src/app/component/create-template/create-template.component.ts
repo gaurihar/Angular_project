@@ -17,6 +17,7 @@ export class CreateTemplateComponent implements OnInit {
   index_patterns:string="";
   basic_type:string[]=["integer","date"];
   mapper:any;
+  js:any
 
   constructor(private dialog:MatDialog, private elk:ElkService) {}
   
@@ -33,7 +34,7 @@ export class CreateTemplateComponent implements OnInit {
       this.mapping=result.data
       console.log(this.mapping)
       console.log(this.mapping.length)
-      this.getMap()
+      //this.getMap()
     });
   }
   
@@ -49,10 +50,10 @@ export class CreateTemplateComponent implements OnInit {
     this.name="";
   }
 
-  getMap(){
+  /*getMap(){
     let jsonObject = {};
     for (let i = 0; i < this.mapping.length; i++) {
-      js=JSON.stringify(this.mapping)
+      this.js=JSON.stringify(this.mapping)
       if (this.mapping[i].format==""){
         let key = this.mapping[i].name+''
 
@@ -66,6 +67,6 @@ export class CreateTemplateComponent implements OnInit {
       }
       
     }
-  }
+  }*/
 
 }
