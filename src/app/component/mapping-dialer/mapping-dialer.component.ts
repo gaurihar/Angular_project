@@ -1,5 +1,6 @@
 import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {Attributes} from '../../model/template-model';
 
 
 @Component({
@@ -8,22 +9,20 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./mapping-dialer.component.css']
 })
 export class MappingDialerComponent {
-  local_data:any;
   
-  public mapping: any[] = [{
-    id: 1,
-    name: '',
-    type: '',
-    format: ''
-  }];
-
   constructor(
     public dialogRef: MatDialogRef<MappingDialerComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: Array<Attributes>) {
+      this.data=[]
+      this.data.push({
+        name: '',
+        type: '',
+        format: ''  
+      })
   }
 
   doAction(){
-    this.dialogRef.close({data:this.mapping});
+    this.dialogRef.close({data:this.data});
   }
 
   closeDialog(){
@@ -32,8 +31,7 @@ export class MappingDialerComponent {
 
 
   addMapping() {
-    this.mapping.push({
-      id: this.mapping.length + 1,
+    this.data.push({
       name: '',
       type: '',
       format: ''
@@ -41,10 +39,10 @@ export class MappingDialerComponent {
   }
 
   removeMapping(i: number) {
-    this.mapping.splice(i, 1);
+    this.data.splice(i, 1);
   }
 
   logMap() {
-    console.log(this.mapping);
+    console.log(this.data);
   }
 }
