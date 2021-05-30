@@ -29,7 +29,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import {MatIconModule} from '@angular/material/icon';
 import { CreateTemplateComponent } from './component/create-template/create-template.component';
-import { MappingDialerComponent } from './component/mapping-dialer/mapping-dialer.component'; 
+import { MappingDialerComponent } from './component/mapping-dialer/mapping-dialer.component';
+import { EditComponent } from './component/edit/edit.component'; 
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MappingDialerComponent } from './component/mapping-dialer/mapping-diale
     ElkComponent,
     SidebarComponent,
     CreateTemplateComponent,
-    MappingDialerComponent
+    MappingDialerComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

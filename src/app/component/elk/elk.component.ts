@@ -1,6 +1,8 @@
 import { KeyValuePipe } from '@angular/common';
 import { Component, KeyValueDiffers, OnInit } from '@angular/core';
 import { ElkService} from '../../services/elk.service'
+import {Router, ROUTES} from '@angular/router'
+
 
 
 
@@ -33,7 +35,7 @@ export class ElkComponent implements OnInit {
     ".monitoring-logstash*",".transform-notifications-000002","kibana_index_template:.kibana",".ml-anomalies-"]
   
 
- constructor(private elk:ElkService){}
+ constructor(private elk:ElkService,private route:Router){}
  
 
  ngOnInit(): void {
@@ -70,6 +72,14 @@ export class ElkComponent implements OnInit {
 })
  }}
 
+ editTemplate(p:any)
+ {
+  if(confirm("Do you want to edit template :"+p))
+  {
+  this.route.navigate(['/edit',p])
+  }
+
+ }
  closeAlert()
  {
   this.isDel=false

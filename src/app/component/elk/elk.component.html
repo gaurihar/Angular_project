@@ -40,7 +40,9 @@
         <td>{{item.index_template.index_patterns}}</td>
         <td *ngIf="item.index_template.priority">{{item.index_template.priority}}</td>
         <td *ngIf="!item.index_template.priority">--</td>
-        <td><mat-icon>create</mat-icon></td>
+        <td>
+          <button (click)="editTemplate(item.name)"><mat-icon>create</mat-icon></button>
+        </td>
         <td>
           <button (click)="deteleTemplate(item.name)" class="btn btn-danger btn-sm">Delete</button>
         </td>

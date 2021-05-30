@@ -25,9 +25,8 @@ export class CreateTemplateComponent implements OnInit {
   mapping:Array<Attributes>=[];
   Confirmation: String = "";
   index_patterns:string="";
-  basic_type:string[]=["integer","date"];
-  mapper:any;
-  js:any
+  index=0
+  property:Property={}
 
   constructor(private dialog:MatDialog, private elk:ElkService) {}
   
@@ -43,9 +42,7 @@ export class CreateTemplateComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result=> {
       //error can be handled here
       this.mapping=result.data
-      console.log(this.mapping)
-      console.log(this.mapping.length)
-      //this.getMap()
+      this.property = this.getMap()
     });
   }
   
@@ -73,15 +70,6 @@ export class CreateTemplateComponent implements OnInit {
     this.name="";
   }
 
-<<<<<<< HEAD
-  /*getMap(){
-    let jsonObject = {};
-    for (let i = 0; i < this.mapping.length; i++) {
-      this.js=JSON.stringify(this.mapping)
-      if (this.mapping[i].format==""){
-        let key = this.mapping[i].name+''
-=======
->>>>>>> a282b9ad5f9569025b8da7f678c94e52e5c3373d
 
   getIndexTemplateObject(index_patterns:string[], mapping_count:number){
     
@@ -108,11 +96,10 @@ export class CreateTemplateComponent implements OnInit {
         this.index+=1
       }
     }
-<<<<<<< HEAD
-  }*/
-=======
     return PropertyObj
   }
->>>>>>> a282b9ad5f9569025b8da7f678c94e52e5c3373d
 
 }
+
+    
+

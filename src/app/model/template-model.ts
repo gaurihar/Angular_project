@@ -32,7 +32,7 @@ export interface Mappings{
     properties: Property;
   }
 
-
+//This model is created o
 export interface Attributes{
   name: string;
   type:string;

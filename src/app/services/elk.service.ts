@@ -27,4 +27,10 @@ export class ElkService {
      
     return this.http.delete(`/_index_template/${template_name}`);
   }
+
+  public getTemplateData(name:string):Observable<any>
+  {
+    return this.http.get(`_index_template/${name}`);
+
+  }
 }
